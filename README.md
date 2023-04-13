@@ -6,14 +6,16 @@
 
 you need puppeteer to run the script. 
 
-open your terminal and
+Step 1. open your terminal and
+
+
 ```
 git clone https://github.com/NateCC0902/holdyourfork
 cd holdyourfork
-npm install puppeteer
+npm install
 ```
 
-and create your password.js
+Step 2. Create your password.js
 
 Inside you need:
 
@@ -24,7 +26,7 @@ let course = 'AAAAA'; // course code you wanna add
 ```
 and in main.js you also need set DUO passcode (dont use push).
 
-To run it.
+Step 3. Run it (in terminal).
 ```
 node main.js
 ```
