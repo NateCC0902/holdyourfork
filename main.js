@@ -4,7 +4,7 @@ const puppeteer = require('puppeteer');
 let username = '';
 let password = '';
 let course = 'Q63B01';
-let duo_code = '';
+let duo_code = ''; // this should be the 6 digit code in the duo app 
 let minutes_delay = 15; // change this to how often you want the script to run in mins (15 = 15 mins)
 
 (async () => {
