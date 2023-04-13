@@ -4,6 +4,8 @@ const puppeteer = require('puppeteer');
 let username = '';
 let password = '';
 let course = 'Q63B01';
+let duo_code = '';
+let minutes_delay = 15; // change this to how often you want the script to run in mins (15 = 15 mins)
 
 (async () => {
     const browser = await puppeteer.launch({
@@ -31,7 +33,7 @@ let course = 'Q63B01';
     const duoF = frames[1];
     if (duoF) {
         await duoF.$eval('#passcode', el => el.click());
-        await duoF.$eval('.passcode-input', el => el.value = '1111111'); // YOUR DUO CODE GOES HERE
+        await duoF.$eval('.passcode-input', el => el.value = duo_code);
         await duoF.$eval('#passcode', el => el.click());
     }
     //select term
@@ -57,9 +59,8 @@ let course = 'Q63B01';
         await page.waitForSelector('input[name="5.1.27.27.11"]');
         await page.click('input[name="5.1.27.27.11"]');
 
-        // wait 15 minutes 
-        await delay(900000);
-
+        // wait x minutes 
+        await delay(mins * 60000);
     }
 
 })();
