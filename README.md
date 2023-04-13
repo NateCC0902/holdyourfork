@@ -1,11 +1,11 @@
 ----------------Prerequisite------------------
 
 1. node 
+
 LINK: https://nodejs.org/en
 
 ----------------How to use it------------------
 
-you need puppeteer to run the script. 
 
 Step 1. open your terminal and
 
@@ -25,9 +25,13 @@ let username = '';
 let password = ''; 
 let course = 'AAAAA'; // course code you wanna add
 ```
-and in main.js you also need set DUO passcode (dont use push).
+Step 3. Open main.js (you may type code main.js in terminal if you have vscode)
 
-Step 3. Run it (in terminal).
+
+In main.js you also need set DUO passcode (dont use push).
+
+
+Step 4. Run it (in terminal).
 ```
 node main.js
 ```
