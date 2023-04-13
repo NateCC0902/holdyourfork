@@ -10,12 +10,17 @@ and config you password.js
 
 let username = ''; 
 let password = ''; 
-let course = 'AAAAA';
+let course = 'AAAAA'; // course code you wanna add
 
 and in main.js you also need set DUO passcode (dont use push).
 
-----------------remind
+To run it.
+node main.js
+
+----------------remind------------------
 
 This script re add course every 15 mins. DONT make it shorter you may block by school.
 
 DUO passcode is one time use. 
+
+headless: false // this is for show you how the script run it. and set it true will run the script background.
