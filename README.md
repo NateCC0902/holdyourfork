@@ -4,6 +4,10 @@
 
 LINK: https://nodejs.org/en
 
+2. A text editor 
+
+Recommend: https://code.visualstudio.com/
+
 ----------------How to use it------------------
 
 
@@ -31,7 +35,7 @@ let course = 'AAAAA'; // course code you wanna add
 
 // line 34 you need to modif your DUO code there
 
-await duoF.$eval('.passcode-input', el => el.value = '1111111'); // YOUR DUO CODE GOES HERE
+await duoF.$eval('.passcode-input', el => el.value = ' YOUR DUO CODE '); // YOUR DUO CODE GOES HERE ''
 
 ```
 
