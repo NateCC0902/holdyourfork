@@ -1,5 +1,9 @@
 const puppeteer = require('puppeteer');
-import userData from './password.js';
+
+
+let username = '';
+let password = '';
+let course = 'Q63B01';
 
 (async () => {
     const browser = await puppeteer.launch({
@@ -15,8 +19,8 @@ import userData from './password.js';
     await page.setViewport({ width: 1080, height: 1024 });
 
     //login
-    await page.type('#mli', userData.username);
-    await page.type('#password', userData.password)
+    await page.type('#mli', username);
+    await page.type('#password', password)
     const btn = '.btn.btn-lg.btn-primary';
     await page.waitForSelector(btn);
     await page.click(btn);
@@ -27,7 +31,7 @@ import userData from './password.js';
     const duoF = frames[1];
     if (duoF) {
         await duoF.$eval('#passcode', el => el.click());
-        await duoF.$eval('.passcode-input', el => el.value = '');
+        await duoF.$eval('.passcode-input', el => el.value = '1111111'); // YOUR DUO CODE GOES HERE
         await duoF.$eval('#passcode', el => el.click());
     }
     //select term
@@ -43,7 +47,7 @@ import userData from './password.js';
         await page.click('input[name="5.1.27.1.23"]');
 
         await page.waitForTimeout(5000);
-        await page.type('input[name="5.1.27.7.7"]', userData.course);
+        await page.type('input[name="5.1.27.7.7"]', course);
         await page.click('input[name="5.1.27.7.9"]');
 
         await page.waitForSelector('input[name="5.1.27.11.11"]');

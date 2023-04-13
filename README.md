@@ -16,22 +16,26 @@ cd holdyourfork
 npm install
 ```
 
-Step 2. Create your password.js
+Step 2. Open main.js config your username, password, DUO CODE and course code. 
 
-Inside you need:
+
+(you may edit by "code main.js" in terminal, if you have vsc)
+
+
+Inside there are:
 
 ```
 let username = ''; 
 let password = ''; 
 let course = 'AAAAA'; // course code you wanna add
+
+// line 34 you need to modif your DUO code there
+
+await duoF.$eval('.passcode-input', el => el.value = '1111111'); // YOUR DUO CODE GOES HERE
+
 ```
-Step 3. Open main.js (you may type code main.js in terminal if you have vscode)
 
-
-In main.js you also need set DUO passcode (dont use push).
-
-
-Step 4. Run it (in terminal).
+Step 3. Run it (in terminal).
 ```
 node main.js
 ```
