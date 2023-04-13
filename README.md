@@ -1,13 +1,22 @@
+----------------Prerequisite------------------
+
+1. node
+
+----------------How to use it------------------
+
 you need puppeteer to run the script. 
 
 open your terminal and
 ```
 git clone https://github.com/NateCC0902/holdyourfork
 cd holdyourfork
-pip install puppeteer
+npm install puppeteer
 ```
 
-and config you password.js 
+and create your password.js
+
+Inside you need:
+
 ```
 let username = ''; 
 let password = ''; 
@@ -20,7 +29,7 @@ To run it.
 node main.js
 ```
 
-----------------remind------------------
+----------------Reminder------------------
 
 This script re add course every 15 mins. DONT make it shorter you may block by school.
 
