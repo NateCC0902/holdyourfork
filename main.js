@@ -60,7 +60,7 @@ let minutes_delay = 15; // change this to how often you want the script to run i
         await page.click('input[name="5.1.27.27.11"]');
 
         // wait x minutes 
-        await delay(mins * 60000);
+        await delay(minutes_delay * 60000);
     }
 
 })();
