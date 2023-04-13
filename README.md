@@ -1,4 +1,6 @@
-----------------Prerequisite------------------
+# ----------------Prerequisite------------------
+
+
 
 1. node 
 
@@ -8,10 +10,13 @@ LINK: https://nodejs.org/en
 
 Recommend: https://code.visualstudio.com/
 
-----------------How to use it------------------
 
 
-Step 1. open your terminal and
+# ----------------How to use it------------------
+
+
+
+### Step 1. open your terminal and
 
 
 ```
@@ -20,7 +25,9 @@ cd holdyourfork
 npm install
 ```
 
-Step 2. Open main.js config your username, password, DUO CODE and course code. 
+
+
+### Step 2. Open main.js config your username, password, DUO CODE and course code. 
 
 
 (you may edit by "code main.js" in terminal, if you have vsc)
@@ -39,12 +46,21 @@ await duoF.$eval('.passcode-input', el => el.value = ' YOUR DUO CODE '); // YOUR
 
 ```
 
-Step 3. Run it (in terminal).
+
+
+### Step 3. Run it (in terminal).
+
+
 ```
 node main.js
 ```
 
-----------------Reminder------------------
+
+
+# ----------------Reminder------------------
+
+
+
 
 This script re add course every 15 mins. DONT make it shorter you may block by school.
 
