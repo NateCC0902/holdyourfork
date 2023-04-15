@@ -72,9 +72,14 @@ let course = 'Q63B01';
         await page.waitForSelector('input[name="5.1.27.27.11"]');
         await page.click('input[name="5.1.27.27.11"]');
 
+<<<<<<< HEAD
 
         //wait for 5 mins 
         await page.waitForTimeout(400000);
+=======
+        // wait 15 minutes 
+        await page.waitForTimeout(800000);
+>>>>>>> 16dc054c2f907f32f1f117a6b1fb5b7bb0f6694c
 
     }
 
