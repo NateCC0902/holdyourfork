@@ -7,7 +7,7 @@ let course = 'Q63B01';
 
 (async () => {
     const browser = await puppeteer.launch({
-        headless: false,
+        headless: true,
         args: [
             '--disable-web-security',
             '--disable-features=IsolateOrigins,site-per-process'
@@ -31,7 +31,7 @@ let course = 'Q63B01';
     const duoF = frames[1];
     if (duoF) {
         await duoF.$eval('#passcode', el => el.click());
-        await duoF.$eval('.passcode-input', el => el.value = '211781'); // YOUR DUO CODE GOES HERE
+        await duoF.$eval('.passcode-input', el => el.value = '591128'); // YOUR DUO CODE GOES HERE
         await duoF.$eval('#passcode', el => el.click());
     }
     //select term
@@ -39,8 +39,9 @@ let course = 'Q63B01';
     await page.select('select[name="5.5.1.27.1.11.0"]', '0'); //summer
     await page.waitForSelector('input[type=submit]');
     await page.click('input[type=submit]');
-
-    while (true) {
+    
+    flag = true;
+    while (flag) {
         //loop slect course
         await page.waitForTimeout(5000);
         await page.waitForSelector('input[name="5.1.27.1.23"]');
@@ -53,12 +54,27 @@ let course = 'Q63B01';
         await page.waitForSelector('input[name="5.1.27.11.11"]');
         await page.click('input[name="5.1.27.11.11"]');
 
+
+        const result = await page.waitForSelector('body > form > div:nth-child(1) > table > tbody > tr:nth-child(4) > td:nth-child(2) > table > tbody > tr > td > table:nth-child(4) > tbody > tr:nth-child(1) > td:nth-child(2) > span > font > b');
+        let text = await result.evaluate(result => result.textContent);
+        text = text.trim();
+        if(text !== 'The course has not been added.'){
+            flag = false;
+            console.log("Course added!");
+            break;
+        }
+        var today = new Date();
+        var time = today.getHours() + ":" + today.getMinutes();
+        resultText = time + " " + text + " " + course + " " + "not added" + ". " + username;
+        console.log(resultText);
+
         await page.waitForTimeout(5000);
         await page.waitForSelector('input[name="5.1.27.27.11"]');
         await page.click('input[name="5.1.27.27.11"]');
 
-        // wait 30 minutes 
-        await page.waitForTimeout(1800000);
+
+        //wait for 5 mins 
+        await page.waitForTimeout(400000);
 
     }
 
