@@ -6,11 +6,6 @@
 
 LINK: https://nodejs.org/en
 
-2. A text editor 
-
-Recommend: https://code.visualstudio.com/
-
-
 
 # ----------------How to use it------------------
 
@@ -26,33 +21,12 @@ npm install
 ```
 
 
+### Step 2. Run it (in terminal).
 
-### Step 2. Open main.js config your username, password, DUO CODE and course code. 
-
-
-(you may edit by "code main.js" in terminal, if you have vsc)
-
-
-Inside there are:
+Replace username, password, duo_code and course_code. and presses ENTER.
 
 ```
-let username = ''; 
-let password = ''; 
-let course = 'AAAAA'; // course code you wanna add
-
-// line 34 you need to modif your DUO code there
-
-await duoF.$eval('.passcode-input', el => el.value = ' YOUR DUO CODE '); // YOUR DUO CODE GOES HERE ''
-
-```
-
-
-
-### Step 3. Run it (in terminal).
-
-
-```
-node main.js
+node main.js USERNAME PASSWORD DUO_CODE COURSE_CODE
 ```
 
 

@@ -1,13 +1,33 @@
 const puppeteer = require('puppeteer');
 
-
 let username = '';
 let password = '';
-let course = 'Q63B01';
+let duocode = '';
+let course = '';
+
+process.argv.forEach(function (val, index, array) {
+    if(index == 2){
+        username = val;
+    }
+    if(index == 3){
+        password = val;
+    }
+    if(index == 4){
+        duocode = val;
+    }
+    if(index == 5){
+        course = val;
+    }
+
+});
+console.log('INFO - username: ' + username);
+console.log('INFO - password: ' + password);
+console.log('INFO - duo_code: ' + duocode);
+console.log('INFO - course: ' + course);
 
 (async () => {
     const browser = await puppeteer.launch({
-        headless: true,
+        headless: false,
         args: [
             '--disable-web-security',
             '--disable-features=IsolateOrigins,site-per-process'
@@ -31,7 +51,7 @@ let course = 'Q63B01';
     const duoF = frames[1];
     if (duoF) {
         await duoF.$eval('#passcode', el => el.click());
-        await duoF.$eval('.passcode-input', el => el.value = '591128'); // YOUR DUO CODE GOES HERE
+        await duoF.$eval('.passcode-input', (el,duocode) =>{ el.value = duocode},duocode); // YOUR DUO CODE GOES HERE
         await duoF.$eval('#passcode', el => el.click());
     }
     //select term
@@ -43,11 +63,11 @@ let course = 'Q63B01';
     flag = true;
     while (flag) {
         //loop slect course
-        await page.waitForTimeout(5000);
+        await page.waitForTimeout(10000);
         await page.waitForSelector('input[name="5.1.27.1.23"]');
         await page.click('input[name="5.1.27.1.23"]');
 
-        await page.waitForTimeout(5000);
+        await page.waitForTimeout(10000);
         await page.type('input[name="5.1.27.7.7"]', course);
         await page.click('input[name="5.1.27.7.9"]');
 
@@ -68,7 +88,7 @@ let course = 'Q63B01';
         resultText = time + " " + text + " " + course + " " + "not added" + ". " + username;
         console.log(resultText);
 
-        await page.waitForTimeout(5000);
+        await page.waitForTimeout(10000);
         await page.waitForSelector('input[name="5.1.27.27.11"]');
         await page.click('input[name="5.1.27.27.11"]');
 
