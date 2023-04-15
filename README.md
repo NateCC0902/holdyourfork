@@ -62,7 +62,7 @@ node main.js
 
 
 
-This script re add course every 15 mins. DONT make it shorter you may block by school.
+This script re add course every 30 mins. DONT make it shorter you may block by school.
 
 DUO passcode is one time use. 
 
