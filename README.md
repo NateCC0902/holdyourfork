@@ -2,10 +2,13 @@
 
 
 
-1. node 
+1. Node 
 
 LINK: https://nodejs.org/en
 
+2. Git
+
+LINK: https://git-scm.com/downloads
 
 # How to use it
 
