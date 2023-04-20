@@ -1,4 +1,4 @@
-# ----------------Prerequisite------------------
+# Prerequisite
 
 
 
@@ -7,7 +7,7 @@
 LINK: https://nodejs.org/en
 
 
-# ----------------How to use it------------------
+# How to use it
 
 
 
@@ -26,17 +26,18 @@ npm install
 Replace username, password, duo_code and course_code. and presses ENTER.
 
 ```
-node main.js USERNAME PASSWORD DUO_CODE COURSE_CODE
+node main.js <USERNAME> <PASSWORD> <DUO_CODE> <COURSE_CODE>
+// i.e 
+//node main.js imhuman password 123089 AA3QCD
 ```
 
 
 
-# ----------------Reminder------------------
+# Reminder
 
 
 
-
-This script re add course every 30 mins. DONT make it shorter you may block by school.
+This script re add course every 1 hours. DONT make it shorter you may block by school.
 
 DUO passcode is one time use. 
 
