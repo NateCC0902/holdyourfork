@@ -20,10 +20,7 @@ LINK: https://git-scm.com/downloads
 ```
 git clone https://github.com/NateCC0902/holdyourfork
 cd holdyourfork
-
-npm init
-npm i puppeteer
-
+npm install
 ```
 
 
